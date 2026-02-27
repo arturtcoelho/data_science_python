@@ -27,16 +27,22 @@ df["salario_media_dept"] = df.groupby("departamento")["salario"].transform("mean
 print("\nCon media por dept:")
 print(df)
 
-# Pivot table
-print("\nPivot table:")
-print(df.pivot_table(values="salario", 
-                     index="departamento", 
-                     aggfunc="mean"))
 
-# crosstab
-print("\nCrosstab:")
-print(pd.crosstab(df["departamento"], df["antiguedad"] > 3))
+# Ejemplo de pivote con meses
+ventas = pd.DataFrame({
+    "cliente": ["Uvas", "Manzanas", "Platanos"],
+    "producto": ["España", "Portugal", "Francia"],
+    "ene": [1, 2, 3],
+    "feb": [4, 5, 6],
+    "mar": [7, 8, 9]
+})
 
-# value_counts
-print("\nValue counts:")
-print(df["departamento"].value_counts())
+print("\nVentas por meses (wide):")
+print(ventas)
+
+ventas_long = ventas.melt(id_vars=["cliente", "producto"], 
+                          var_name="mes", 
+                          value_name="valor")
+
+print("\nVentas pivotadas (long):")
+print(ventas_long)

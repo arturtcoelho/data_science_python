@@ -49,7 +49,7 @@ with open("datos.json", "r", encoding="utf-8") as archivo:
     datos_leidos = json.load(archivo)
     print(datos_leidos)
 
-# pathlib (moderno)
+# pathlib
 from pathlib import Path
 
 ruta = Path("carpeta/archivo.txt")

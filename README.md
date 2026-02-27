@@ -16,10 +16,10 @@
 
 #### 1. Introducción a Python
 - ¿Qué es Python y por qué es ideal para Data Science?
-- Configuración del entorno (Python, Jupyter/VS Code)
+- Configuración del entorno (Python, VS Code)
 - Tu primer script en Python
 
-#### 2. Estructuras de Datos (50 min)
+#### 2. Estructuras de Datos
 - **Variables y tipos de datos**: int, float, str, bool
 - **Colecciones**:
   - Listas: creación, indexación, slicing, métodos principales

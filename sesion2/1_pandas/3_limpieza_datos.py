@@ -4,7 +4,7 @@ import numpy as np
 # DataFrame con valores nulos
 df = pd.DataFrame({
     "nombre": ["Ana", "Carlos", None, "Marta", "Luis"],
-    "edad": [28, , 42,35, None 31],
+    "edad": [28, 42, 35, None, 31],
     "salario": [2500, None, 3000, 4500, None],
     "ciudad": ["Madrid", "Barcelona", "Sevilla", None, "Valencia"]
 })
@@ -13,13 +13,17 @@ print("Original:")
 print(df)
 print(f"\nValores nulos:\n{df.isnull().sum()}")
 
+print()
+
 # Detectar nulos
 print(df.isnull())
+print()
 print(df.notnull())
 
 # Eliminar filas/columnas con nulos
 df_sin_nulos = df.dropna()
-print(f"\nSin nulos (dropna): {df_sin_nulos.shape}")
+print()
+print(df_sin_nulos)
 
 # Llenar nulos
 df_llenado = df.fillna({
@@ -30,9 +34,6 @@ df_llenado = df.fillna({
 })
 print("\nCon fillna:")
 print(df_llenado)
-
-# Forward fill (propagar valor anterior)
-df_ffill = df.fillna(method="ffill")
 
 # Eliminar duplicados
 df_con_dup = pd.DataFrame({

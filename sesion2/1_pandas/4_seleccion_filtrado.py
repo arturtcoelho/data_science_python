@@ -31,7 +31,7 @@ print(df[(df["departamento"] == "IT") & (df["salario"] > 3000)])
 print("\nVentas o Marketing:")
 print(df[df["departamento"].isin(["Ventas", "Marketing"])])
 
-# query (sintaxis más limpia)
+# query
 print("\nCon query:")
 print(df.query("edad > 30 and salario < 4000"))
 

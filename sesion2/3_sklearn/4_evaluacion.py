@@ -4,7 +4,8 @@ from sklearn.metrics import (accuracy_score, precision_score, recall_score,
                              mean_squared_error, r2_score)
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.datasets import make_classification
+from sklearn.datasets import make_classification, make_regression
+from sklearn.model_selection import train_test_split
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -53,7 +54,7 @@ print(f"Mejor CV score: {grid_search.best_score_:.4f}")
 
 # Métricas de regresión
 from sklearn.linear_model import LinearRegression
-X_reg, y_reg = make_classification(n_samples=200, n_features=1, noise=10, random_state=42)
+X_reg, y_reg = make_regression(n_samples=200, n_features=1, noise=10, random_state=42)
 X_train_r, X_test_r, y_train_r, y_test_r = train_test_split(X_reg, y_reg, test_size=0.2)
 
 reg = LinearRegression()

@@ -11,7 +11,8 @@ ax.plot(x, y)
 ax.set_title("Seno")
 ax.set_xlabel("X")
 ax.set_ylabel("Y")
-plt.show()
+# plt.show()
+plt.savefig("grafico1.png", dpi=300)
 
 # Múltiples subplots
 fig, axes = plt.subplots(2, 2, figsize=(10, 8))
@@ -40,7 +41,4 @@ axes[1, 1].scatter(x_scatter, y_scatter, alpha=0.5, c="purple")
 axes[1, 1].set_title("Scatter")
 
 plt.tight_layout()
-plt.show()
-
-# Guardar figura
-# fig.savefig("grafico.png", dpi=300)
+plt.savefig("grafico2.png", dpi=300)
