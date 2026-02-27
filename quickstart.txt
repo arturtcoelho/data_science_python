@@ -1,0 +1,29 @@
+Sigue estos pasos para configurar tu entorno de desarrollo. Hemos incluido las herramientas estándar y algunas otras opciones más.
+
+1. Python
+    Descarga: python.org
+    
+    - Durante la instalación en Windows, marca la casilla "Add Python to PATH".
+
+2. Integrated Development Environment (IDE): VS Code
+    Descarga: code.visualstudio.com
+    
+    Durante la instalación en Windows, marca la casilla: Añadir la opción "Abrir con Code"
+    Extensiones: Instala la extensión oficial de Python (Microsoft) desde el menú de extensiones en el programa.
+
+    (Se puede trabajar con cualquier editor de texto de su preferencia, pero VS Code es el estándar de la industria para el desarrollo de software moderno)
+
+3. Copilotos de IA
+    Recomendación:
+    Open Code: opencode.ai
+        - Añade tu llave de API de cualquiera de los provedores
+        - Corre modelos locales en GPU
+        - Actualmente (febrero 2026) tienen algunos modelos gratis disponibles
+    
+    GitHub Copilot: Requiere suscripción (o registrate con cuenta de estudiante). Se instala como extensión en VS Code.
+
+    Otras alternativas disponibles:
+    Gemini Code Assist & CLI: Extensión para VS Code o Interactuar con Gemini CLI para tareas rápidas desde la terminal. (geminicli.com)
+    Claude Code: La herramienta de línea de comandos de Anthropic (en beta) que es excepcionalmente buena razonando sobre arquitecturas complejas. Requiere un plan Pro (claude.com/product/claude-code)
+    Codex (OpenAI): Similar a las otras opciones, Requiere subscripcion a OpenAI, disponible solo en mac actualmente
+
