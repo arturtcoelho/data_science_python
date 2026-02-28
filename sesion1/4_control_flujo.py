@@ -1,5 +1,7 @@
 # Control de flujo en Python
 
+print(1)
+
 # Condicionales
 edad = 18
 
@@ -22,12 +24,16 @@ else:
 # Bucle for
 frutas = ["manzana", "banana", "cereza"]
 
-for fruta in frutas:
-    print(f"Fruta: {fruta}")
+for letra in "manzana":
+    print(f"letra: {letra}")
 
 # range()
-for i in range(5):
-    print(i)  # 0, 1, 2, 3, 4
+l = []
+for i in range(1, 100):
+    l.append(i)
+print(l)
+
+print([i for i in range(100)])
 
 for i in range(1, 6):
     print(i)  # 1, 2, 3, 4, 5
@@ -36,11 +42,6 @@ for i in range(1, 6):
 for indice, fruta in enumerate(frutas):
     print(f"{indice}: {fruta}")
 
-# Bucle while
-contador = 0
-while contador < 5:
-    print(contador)
-    contador += 1
 
 # Control: break y continue
 for n in range(10):
