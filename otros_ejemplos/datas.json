@@ -1,0 +1,15 @@
+[{
+    "profesor": "Artur",
+    "clases": [
+        {
+            "nombre": "python",
+            "estudiantes": ["daniel", "eloy"]
+        },
+        {
+            "nombre": "ia"
+        }
+    ]
+},
+{
+}
+]

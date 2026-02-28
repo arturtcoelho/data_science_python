@@ -1,37 +1,34 @@
 import pandas as pd
 import numpy as np
 
-df = pd.DataFrame({
-    "departamento": ["Ventas", "IT", "Marketing", "Ventas", "IT", "Marketing"],
-    "empleado": ["Ana", "Carlos", "Marta", "Luis", "Elena", "Pedro"],
-    "salario": [2500, 3200, 4500, 2800, 3100, 4200],
-    "antiguedad": [2, 5, 8, 1, 4, 7]
-})
+# df = pd.read_csv("empleados.csv")
 
-# groupby - agrupar por columna
-print("Groupby departamento:")
-print(df.groupby("departamento").size())
+# print(df)
 
-# Agregaciones
-print("\nMedia por departamento:")
-print(df.groupby("departamento")["salario"].mean())
+# # groupby - agrupar por columna
+# print("Groupby departamento:")
+# print(df.groupby("departamento").size())
 
-print("\nMúltiples agregaciones:")
-print(df.groupby("departamento").agg({
-    "salario": ["mean", "sum", "max"],
-    "antiguedad": "mean"
-}))
+# # Agregaciones
+# print("\nMedia por departamento:")
+# print(df.groupby("departamento")["salario"].mean())
 
-# transform (mantiene forma original)
-df["salario_media_dept"] = df.groupby("departamento")["salario"].transform("mean")
-print("\nCon media por dept:")
-print(df)
+# print("\nMúltiples agregaciones:")
+# print(df.groupby("departamento").agg({
+#     "salario": ["mean", "sum", "max"],
+#     "edad": "mean"
+# }))
+
+# # transform (mantiene forma original)
+# df["salario_media_dept"] = df.groupby("departamento")["salario"].transform("mean")
+# print("\nCon media por dept:")
+# print(df)
 
 
 # Ejemplo de pivote con meses
 ventas = pd.DataFrame({
-    "cliente": ["Uvas", "Manzanas", "Platanos"],
-    "producto": ["España", "Portugal", "Francia"],
+    "producto": ["Uvas", "Manzanas", "Platanos"],
+    "pais": ["España", "Portugal", "Francia"],
     "ene": [1, 2, 3],
     "feb": [4, 5, 6],
     "mar": [7, 8, 9]
@@ -40,9 +37,11 @@ ventas = pd.DataFrame({
 print("\nVentas por meses (wide):")
 print(ventas)
 
-ventas_long = ventas.melt(id_vars=["cliente", "producto"], 
+ventas_long = ventas.melt(id_vars=["producto", "pais"], 
                           var_name="mes", 
-                          value_name="valor")
+                          value_name="total_ventas")
 
 print("\nVentas pivotadas (long):")
 print(ventas_long)
+
+print(ventas_long["total_ventas"].sum())

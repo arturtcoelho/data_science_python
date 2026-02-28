@@ -1,29 +1,25 @@
 import pandas as pd
 import numpy as np
 
-# DataFrame con valores nulos
-df = pd.DataFrame({
-    "nombre": ["Ana", "Carlos", None, "Marta", "Luis"],
-    "edad": [28, 42, 35, None, 31],
-    "salario": [2500, None, 3000, 4500, None],
-    "ciudad": ["Madrid", "Barcelona", "Sevilla", None, "Valencia"]
-})
+df = pd.read_csv("empleados.csv")
 
-print("Original:")
-print(df)
-print(f"\nValores nulos:\n{df.isnull().sum()}")
+# print("Original:")
+# print(df)
+# print(f"\nValores nulos:\n{df.isnull().sum()}")
 
-print()
+# print()
 
-# Detectar nulos
-print(df.isnull())
-print()
-print(df.notnull())
+# # Detectar nulos
+# print(df.isnull())
+# print()
+# print(df.notnull())
 
 # Eliminar filas/columnas con nulos
-df_sin_nulos = df.dropna()
-print()
-print(df_sin_nulos)
+# df_sin_nulos = df.dropna()
+# print()
+# print(df_sin_nulos)
+
+df = df.replace(0, np.nan)
 
 # Llenar nulos
 df_llenado = df.fillna({
@@ -35,13 +31,13 @@ df_llenado = df.fillna({
 print("\nCon fillna:")
 print(df_llenado)
 
-# Eliminar duplicados
-df_con_dup = pd.DataFrame({
-    "nombre": ["Ana", "Carlos", "Ana", "Marta"],
-    "edad": [28, 35, 28, 42]
-})
-print("\nSin duplicados:")
-print(df_con_dup.drop_duplicates())
+# # Eliminar duplicados
+# df_con_dup = pd.DataFrame({
+#     "nombre": ["Ana", "Carlos", "Ana", "Marta"],
+#     "edad": [28, 35, 32, 42]
+# })
+# print("\nSin duplicados:")
+# print(df_con_dup.drop_duplicates())
 
 # Transformar tipos
 df["edad"] = df["edad"].astype("Int64")  # nullable int

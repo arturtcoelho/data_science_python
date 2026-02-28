@@ -1,18 +1,18 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Datos
-x = np.linspace(0, 10, 100)
-y = np.sin(x)
+# # Datos
+# x = np.linspace(0, 10, 1000)
+# y = np.tan(x)
 
-# Figura y axes
-fig, ax = plt.subplots()
-ax.plot(x, y)
-ax.set_title("Seno")
-ax.set_xlabel("X")
-ax.set_ylabel("Y")
-# plt.show()
-plt.savefig("grafico1.png", dpi=300)
+# # Figura y axes
+# fig, ax = plt.subplots()
+# ax.plot(x, y)
+# ax.set_title("Seno")
+# ax.set_xlabel("X")
+# ax.set_ylabel("Y")
+# # plt.show()
+# plt.savefig("grafico1.png", dpi=300)
 
 # Múltiples subplots
 fig, axes = plt.subplots(2, 2, figsize=(10, 8))
@@ -31,8 +31,26 @@ axes[0, 1].set_title("Barras")
 
 # Histograma
 datos = np.random.normal(100, 15, 1000)
-axes[1, 0].hist(datos, bins=30, edgecolor="black")
-axes[1, 0].set_title("Histograma")
+counts, bins, _ = axes[1, 0].hist(datos, bins=30, edgecolor="black")
+# Líneas adaptadas al histograma
+bin_centers = 0.5 * (bins[:-1] + bins[1:])
+axes[1, 0].plot(
+    bin_centers,
+    counts,
+    label="Recuento",
+    color="blue",
+    marker="o",
+    linestyle="-",
+)
+axes[1, 0].plot(
+    bin_centers,
+    counts * 0.6,
+    label="60 % del recuento",
+    color="red",
+    linestyle="--",
+)
+axes[1, 0].legend()
+axes[1, 0].set_title("Histograma + líneas")
 
 # Scatter
 x_scatter = np.random.randn(50)

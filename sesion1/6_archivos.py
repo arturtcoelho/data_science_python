@@ -49,14 +49,14 @@ with open("salida.txt", "a", encoding="utf-8") as archivo:
 #     datos_leidos = json.load(archivo)
 #     print(datos_leidos)
 
-# # pathlib
-# from pathlib import Path
+# pathlib
+from pathlib import Path
 
-# ruta = Path("carpeta/archivo.txt")
-# print(ruta.name)       # archivo.txt
-# print(ruta.stem)       # archivo
-# print(ruta.suffix)     # .txt
-# print(ruta.parent)     # carpeta
+ruta = Path("carpeta/archivo.txt")
+print(ruta.name)       # archivo.txt
+print(ruta.stem)       # archivo
+print(ruta.suffix)     # .txt
+print(ruta.parent)     # carpeta
 
-# # Crear directorio
-# Path("nueva_carpeta").mkdir(exist_ok=True)
+# Crear directorio
+Path("nueva_carpeta").mkdir(exist_ok=True)

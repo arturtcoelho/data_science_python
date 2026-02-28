@@ -7,26 +7,28 @@ import seaborn as sns
 df = pd.read_csv("dataset.csv", index_col=0)
 
 # Estadísticos descriptivos
-stats = df[["popularity", "danceability", "energy"]].describe().round(2)
+stats = df.describe().round(2)
 print("Estadísticos descriptivos:")
 print(stats)
 
+stats.to_csv("stats.csv")
+
 # Top 5 canciones por popularidad
-top5 = (
-    df.nlargest(5, "popularity")[
-        ["track_name", "artists", "track_genre", "popularity"]
-    ]
-    .reset_index(drop=True)
-)
+top5 = df.nlargest(5, "popularity")
 print("\nTop 5 de canciones por popularidad:")
 print(top5.to_string(index=False))
 
-# Promedio de popularidad por género
+top5.to_csv("top5.csv")
+
+# # Promedio de popularidad por género
 genre_popularity = df.groupby("track_genre")["popularity"].mean().round(2)
+print(genre_popularity)
 best_genre = genre_popularity.idxmax()
+print(best_genre)
 print(
     f"Género con mayor popularidad promedio: {best_genre} ({genre_popularity[best_genre]:.2f})"
 )
+
 
 # Top generos por danceability y sus energy
 genre_table = (
@@ -39,12 +41,13 @@ print(genre_table.head(10))
 
 ### Gráfica de danceability vs energy para las 100 canciones más populares
 top100 = df.nlargest(100, "popularity")
+
 plt.figure(figsize=(9, 6))
 sns.scatterplot(
     data=top100,
     x="danceability",
     y="energy",
-    hue="popularity",
+    hue="duration_ms",
     palette="flare",
     size="popularity",
     sizes=(40, 200),

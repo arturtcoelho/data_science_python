@@ -27,3 +27,5 @@ Sigue estos pasos para configurar tu entorno de desarrollo. Hemos incluido las h
     Claude Code: La herramienta de línea de comandos de Anthropic (en beta) que es excepcionalmente buena razonando sobre arquitecturas complejas. Requiere un plan Pro (claude.com/product/claude-code)
     Codex (OpenAI): Similar a las otras opciones, Requiere subscripcion a OpenAI, disponible solo en mac actualmente
 
+https://leetcode.com
+https://adventofcode.com

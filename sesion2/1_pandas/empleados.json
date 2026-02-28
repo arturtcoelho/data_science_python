@@ -1,0 +1,26 @@
+[
+  {
+    "nombre":"Ana",
+    "edad":28,
+    "salario":2500,
+    "departamento":"Ventas"
+  },
+  {
+    "nombre":"Carlos",
+    "edad":35,
+    "salario":3200,
+    "departamento":"IT"
+  },
+  {
+    "nombre":"Marta",
+    "edad":42,
+    "salario":4500,
+    "departamento":"Marketing"
+  },
+  {
+    "nombre":"Luis",
+    "edad":31,
+    "salario":2800,
+    "departamento":"IT"
+  }
+]
