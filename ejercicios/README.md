@@ -33,3 +33,6 @@ Profundiza en EDA solo con pandas (puedes apoyarte en Matplotlib/Seaborn para gr
 5. Identifica posibles outliers de energía por género usando el rango intercuartílico (IQR). Exporta el resultado a `reports/outliers_energy.csv` con las mismas columnas del punto anterior.
 6. Agrega al menos una visualización que compare géneros (ej. barras de `popularity` promedio, boxplot de `danceability`). Guarda el gráfico en `reports/` con etiquetas claras.
 7. Implementa una función `genre_snapshot(df, genre)` que imprima un resumen con estadísticas clave y la lista de canciones destacadas para el género solicitado.
+
+Otros ejercicios interesantes para probar las habilidades en python:
+https://adventofcode.com

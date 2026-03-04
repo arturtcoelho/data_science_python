@@ -28,4 +28,3 @@ Sigue estos pasos para configurar tu entorno de desarrollo. Hemos incluido las h
     Codex (OpenAI): Similar a las otras opciones, Requiere subscripcion a OpenAI, disponible solo en mac actualmente
 
 https://leetcode.com
-https://adventofcode.com
